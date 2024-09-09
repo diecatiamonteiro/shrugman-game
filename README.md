@@ -31,9 +31,8 @@ In Shrugman, the program selects a secret title, and players guess letters to un
    ```
 
 2. Install the required dependencies:
-
    ```bash
-npm install readline-sync clear chalk
+   npm install readline-sync clear chalk
    ```
 
 4. To start the game, run:
