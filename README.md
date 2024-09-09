@@ -1,10 +1,10 @@
 # Shrugman
 
-Welcome to Shrugman, a guessing game where players try to guess a secret title by revealing letters. Incorrect guesses add pieces to a shrug emoji, and the game ends when the emoji is fully drawn or the title is guessed.
-
 ```bash
 ¯\\_(ツ)_/¯
 ```
+
+Welcome to Shrugman, a guessing game where players try to guess a secret title by revealing letters. Incorrect guesses add pieces to a shrug emoji, and the game ends when the emoji is fully drawn or the title is guessed.
 
 ## Project Overview
 
@@ -19,29 +19,21 @@ In Shrugman, the program selects a secret title, and players guess letters to un
   - TV Shows
   - Songs
 - **Play Again Option:** After a game ends, players can choose to play another round and choose a new category.
-- **Clear Console:** This game ises `console.clear()` to keep the game screen updated and tidy.
+- **Clear Console:** This game uses `console.clear()` to keep the game screen updated and tidy.
 - **Chalk Integration:** It adds color to the console output for a more engaging visual experience.
 
 ## Game setup
 
-To set up the Shrugman game, follow these steps:
-
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:diecatiamonteiro/shrugman-game.git
    ```
 
-2. Navigate to the project directory:
+2. Install the required dependencies:
 
    ```bash
-   cd shrugman
-   ```
-
-3. Install the required dependencies:
-
-   ```bash
-   npm install
+npm install readline-sync clear chalk
    ```
 
 4. To start the game, run:
