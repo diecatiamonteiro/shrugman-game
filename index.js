@@ -12,20 +12,20 @@
 // - Manages the game setup and loop
 // - Runs the main game loop with the option to play again
 
-// ------------------------------------------------------------ import dependencies & other js file
+// ------------------------------------------------------------ import dependencies & class from other js file
 
 import Shrugman from "./shrugman.js";
 import readlineSync from "readline-sync";
 import clear from "clear";
 import chalk from "chalk";
 
-// ------------------------------------------------------------ prompt user input
+// ------------------------------------------------------------ function 'prompt' for user input
 
-// Handles user input.
+// Handles user input during the game. Written here once and used through the game as 'prompt'.
 
 const prompt = (question) => readlineSync.question(question);
 
-// ------------------------------------------------------------ random title choice
+// ------------------------------------------------------------ function for random title choice
 
 // Selects a random title from a list, ensuring variety in each game.
 
@@ -34,7 +34,7 @@ const getRandomTitle = (titles) => {
   return titles[randomIndex];
 };
 
-// ------------------------------------------------------------ 5 possible categories
+// ------------------------------------------------------------ variable 'categories' with 5 possibilities
 
 //  Provides a collection of categories (movies, books, fictional characters, TV shows, songs) with associated titles, allowing players to choose a theme for the game.
 
@@ -128,7 +128,7 @@ const categories = {
   ],
 };
 
-// ------------------------------------------------------------ choose category
+// ------------------------------------------------------------ function to choose category
 
 // Prompts users to select a category by entering a number, ensuring valid input before proceeding.
 
@@ -160,14 +160,14 @@ const chooseCategory = () => {
   }
 };
 
-// ------------------------------------------------------------ start game
+// ------------------------------------------------------------ function to initialize a game session
 
 // Initializes and runs a game session, including displaying rules, handling guesses, updating game state, and determining game outcomes.
 
 const startGame = (category) => {
   clear();
 
-  // Intro & rules
+  // Intro & rules function
   const displayIntroAndRules = () => {
     console.log(chalk.blue.bold("Welcome to Shrugman!"));
     console.log(chalk.gray("\nRules of the Game:"));
@@ -188,7 +188,7 @@ const startGame = (category) => {
     console.log(chalk.gray("\n============================================\n"));
   };
 
-  // Display selected category during the game to keep user focused
+  // Function for displaying the selected category during the game to keep user focused
   const displayCategory = () => {
     console.log(
       chalk.yellow.bold(
@@ -203,14 +203,21 @@ const startGame = (category) => {
     );
   };
 
+  // Call both functions to display intro, rules & categories available
   displayIntroAndRules();
   displayCategory();
 
+  // Retrieve the list of titles corresponding to the chosen category from the categories object
   const titleList = categories[category];
+
+  // Select a random title from the titleList array
   const title = getRandomTitle(titleList);
+
+  // Create a new instance of the Shrugman class, passing the randomly chosen title to it
   const game = new Shrugman(title);
 
-  let message = ""; // Variable to hold invalid or repeated input messages
+  // Variable to hold invalid or repeated input messages
+  let message = "";
 
   // Main game loop
   while (true) {
@@ -225,11 +232,11 @@ const startGame = (category) => {
       console.log(message); // Display any message from the previous turn
     }
 
-    // Prompt for user input
-    const guess = prompt("Guess a letter: ").toLowerCase(); // Convert input to lowercase
+    // Prompt user to guess a letter
+    const guess = prompt("Guess a letter: ").toLowerCase();
 
     // Handle the result of the guess
-    const result = game.makeGuess(guess);
+    const result = game.makeGuess(guess); // ('game' is the instance of Shrugman class; 'makeGuess' is a method from Shrugman class)
 
     if (result === "Invalid input! Please enter a single letter.") {
       message = chalk.red("Invalid input. Please enter a single letter.");
@@ -273,7 +280,7 @@ const runGame = async () => {
 
     // Loop until valid input is given
     do {
-      playAgain = prompt("Do you want to play again? (yes/no): ").toLowerCase(); // Convert input to lowercase
+      playAgain = prompt("Do you want to play again? (yes/no): ").toLowerCase();
     } while (playAgain !== "yes" && playAgain !== "no");
 
     if (playAgain === "no") {
