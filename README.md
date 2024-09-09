@@ -1,50 +1,60 @@
 # Shrugman
 
-Let's build another guessing game.
-One player, makes up a secret word or phrase (we will use movie titles), while the other player tries to guess the word by asking what letters it contains.
-However, every wrong guess brings them one step closer to losing.
-To indicate how many attempts are left, instead of the usual hanging man drawing, we draw the shrug emoji. It consists of exactly 10 characters:
+Welcome to Shrugman, a guessing game where players try to guess a secret title by revealing letters. Incorrect guesses add pieces to a shrug emoji, and the game ends when the emoji is fully drawn or the title is guessed.
 
 ```bash
-¯\_(:/)_/¯
+¯\\_(ツ)_/¯
 ```
 
-Every wrong guess, draws one more piece of the emoji.
-If the user has already guessed this letter once, ask them for another letter, instead of couting it as a wrong guess.
+## Project Overview
 
-The secret movie title is displayed masked - every character except spaces is represented by an underscore `_`. With every correct guess, all ocurrences of the letter are revealed.
+In Shrugman, the program selects a secret title, and players guess letters to uncover it. The game includes:
 
-Once the game is over, print a list of all games played, and whether they were a win or a loss:
+- **Masked Title:** Each letter in the title is represented by an underscore `_` until guessed.
+- **Shrug Emoji:** Represents the number of wrong guesses with an emoji that grows as guesses are missed.
+- **Categories:** Players can choose from various categories, including:
+  - Movies
+  - Books
+  - Fictional Characters
+  - TV Shows
+  - Songs
+- **Play Again Option:** After a game ends, players can choose to play another round and choose a new category.
+- **Clear Console:** This game ises `console.clear()` to keep the game screen updated and tidy.
+- **Chalk Integration:** It adds color to the console output for a more engaging visual experience.
 
-1. Braveheart - win
-2. The Godfather - loss
+## Game setup
 
-Without adding the extra feature for asking for another round, this list will always have 1 item.
+To set up the Shrugman game, follow these steps:
 
-## Requirements
+1. Clone the repository:
 
-- Use class: Ideally your class is unaware of the `prompt` or the `console`.
-- All changes re pushed to your Github repo.
+   ```bash
+   git clone https://github.com/yourusername/shrugman.git
+   ```
 
-## Extra Features
+2. Navigate to the project directory:
 
-- Make use of [`console.clear()`](https://www.geeksforgeeks.org/node-js-console-clear-method/), so we only see the most recent state of the word and the shrugman emoji.
-- Add guess categories: The user can have mutliple categories to choose from. We already have movies, let's add also books, or quotes. If they choose movies, we will ask them to guess a movie title. If they choose books, we will ask them to guess a book title.
-- Ask the user to play another round with the same category.
+   ```bash
+   cd shrugman
+   ```
 
-## Optional
+3. Install the required dependencies:
 
-- Use `require` to split into separate files: you should have at least 2 files, one main file and one where the class will live.
-- use [chalk](https://www.npmjs.com/package/chalk) to make things a bit more colorful 🌈
+   ```bash
+   npm install
+   ```
 
-## Examples
+4. To start the game, run:
+   ```bash
+   node index.js
+   ```
+5. Follow the prompts to select a category and start guessing.
 
-Take a look at the examples:
+## Game Examples
 
-When the user wins a round:
+Here is a sequencial overview of Shrugman after the player chooses a category and wins the game.
 
-![example win](img/example-win.gif)
+![game intro](img/game-intro.png)
+![game-won](img/game-won.png)
 
-When the user loses a round:
-
-![example loss](img/example-loss.gif)
+## Thanks for reading. I hope you enjoy the game!
