@@ -284,7 +284,7 @@ const runGame = async () => {
     } while (playAgain !== "yes" && playAgain !== "no");
 
     if (playAgain === "no") {
-      console.log(chalk.yellow.bold("See you next time! 👋"));
+      console.log(chalk.yellow.bold("\nSee you next time! 👋\n"));
       break;
     }
     // If 'yes', start a new game

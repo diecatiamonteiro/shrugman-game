@@ -32,7 +32,7 @@ In Shrugman, the program selects a secret title, and players guess letters to un
 
 2. Install the required dependencies:
    ```bash
-   npm install readline-sync clear chalk
+   npm install readline-sync chalk
    ```
 
 4. To start the game, run:
@@ -41,11 +41,18 @@ In Shrugman, the program selects a secret title, and players guess letters to un
    ```
 5. Follow the prompts to select a category and start guessing.
 
-## Game Examples
+## Game Preview
 
-Here is a sequencial overview of Shrugman after the player chooses a category and wins the game.
+#### Categories Selection
 
-![game intro](img/game-intro.png)
-![game-won](img/game-won.png)
+![Game Categories](img/categories.png)
+
+#### Winning the Game
+
+![Game Winning Message](img/winning-message.png)
+
+#### Loosing the Game
+
+![Game Loosing Message](img/game-over.png)
 
 ## Thanks for reading. I hope you enjoy the game!
